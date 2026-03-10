@@ -1584,3 +1584,476 @@ input:focus, textarea:focus {
 .ig-item--embed .ig-video-badge {
     display: none;
 }
+
+/* ============================================================
+   SECCIÓN VIDEOS
+   ============================================================ */
+.videos-section {
+    padding: 100px 0;
+    background: var(--bg);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    align-items: start;
+}
+
+/* Featured card ocupa columna izquierda completa (ambas filas) */
+.video-card--featured {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.videos-secondary {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.video-card--wide {
+    grid-column: span 1;
+}
+
+/* Fila inferior: dos cards anchas */
+.videos-grid > .video-card--wide:nth-of-type(1) { grid-column: 1 / 2; grid-row: 2; }
+.videos-grid > .video-card--wide:nth-of-type(2) { grid-column: 2 / 3; grid-row: 2; }
+
+.video-card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-3);
+    transition: border-color 0.4s ease, transform 0.4s var(--ease-out-expo);
+}
+
+.video-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-card--featured .video-wrap {
+    aspect-ratio: 4 / 3;
+}
+
+.videos-secondary .video-card .video-wrap {
+    aspect-ratio: 16 / 9;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.5s ease, transform 0.6s var(--ease-out-expo);
+    filter: brightness(0.75);
+}
+
+.video-card:hover .video-player {
+    filter: brightness(0.95);
+    transform: scale(1.04);
+}
+
+/* Controles */
+.video-controls {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-card:hover .video-controls { opacity: 1; transform: translateY(0); }
+
+.video-play-btn,
+.video-mute-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(8,8,8,0.8);
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+    backdrop-filter: blur(6px);
+}
+
+.video-play-btn:hover,
+.video-mute-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* Barra de progreso */
+.video-progress-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    z-index: 4;
+}
+
+.video-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.1s linear;
+}
+
+/* Meta info debajo del video */
+.video-meta {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.video-cat {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.video-title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.video-duration {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+/* Número decorativo */
+.video-num {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    z-index: 5;
+    background: rgba(8,8,8,0.6);
+    padding: 3px 7px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+/* ============================================================
+   SECCIÓN FOTOS
+   ============================================================ */
+.fotos-section {
+    padding: 100px 0;
+    background: var(--bg-2);
+}
+
+/* Tabs */
+.fotos-tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 0 40px;
+}
+
+.foto-tab {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.foto-tab:last-child { border-right: none; }
+
+.foto-tab.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+.foto-tab:not(.active):hover {
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* Grid masonry con CSS columns */
+.fotos-grid {
+    columns: 3;
+    column-gap: 12px;
+}
+
+.foto-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    break-inside: avoid;
+    display: block;
+    background: var(--bg-3);
+    cursor: zoom-in;
+}
+
+.foto-item--tall img { aspect-ratio: unset; }
+
+.foto-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(30%) brightness(0.85);
+    transition: filter 0.5s ease, transform 0.6s var(--ease-out-expo);
+}
+
+.foto-item:hover img {
+    filter: grayscale(0%) brightness(1.05);
+    transform: scale(1.05);
+}
+
+/* Overlay */
+.foto-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.foto-item:hover .foto-overlay { opacity: 1; }
+
+.foto-overlay-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 14px;
+}
+
+.foto-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.foto-expand {
+    width: 30px; height: 30px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: white;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.foto-expand:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+/* Badge de estado */
+.foto-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(232,50,26,0.85);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+    padding: 4px 9px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 3;
+}
+
+.foto-badge--gold { background: rgba(200,169,110,0.9); }
+.foto-badge--green { background: rgba(61,186,114,0.9); color: #000; }
+
+/* Lightbox navegable (fotos) */
+#lightbox-fotos {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 9990;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightbox-fotos.active { display: flex; }
+
+.lb-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px; height: 50px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(8,8,8,0.7);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+    backdrop-filter: blur(8px);
+    z-index: 3;
+}
+
+.lb-prev { left: 24px; }
+.lb-next { right: 24px; }
+
+.lb-nav:hover {
+    border-color: var(--accent);
+    color: white;
+    background: var(--accent);
+}
+
+/* ============================================================
+   RESPONSIVE — Videos & Fotos
+   ============================================================ */
+@media (max-width: 1024px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card--featured,
+    .videos-secondary,
+    .video-card--wide { grid-column: 1; grid-row: auto; }
+
+    .videos-secondary { flex-direction: row; }
+    .videos-secondary .video-card { flex: 1; }
+
+    .fotos-grid { columns: 2; }
+}
+
+@media (max-width: 768px) {
+    .videos-section,
+    .fotos-section { padding: 70px 0; }
+
+    .videos-secondary { flex-direction: column; }
+
+    .fotos-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .foto-tab { flex-shrink: 0; padding: 10px 18px; }
+
+    .fotos-grid { columns: 2; }
+}
+
+@media (max-width: 500px) {
+    .fotos-grid { columns: 1; }
+    .lb-prev { left: 10px; }
+    .lb-next { right: 10px; }
+}
+/* --- LOGO EN EL ENCABEZADO (NAVBAR) --- */
+.logo {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente la imagen con el texto */
+    gap: 12px;
+    /* Espacio perfecto entre el logo y las letras */
+    cursor: pointer;
+}
+
+.logo-nav-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    /* Asegura que el contorno sea un círculo perfecto */
+    background-color: white;
+    /* Fondo blanco para que resalte sobre el rojo */
+    padding: 2px;
+    /* Borde interno sutil */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra elegante */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse (o tocar) el logo del menú */
+.logo:hover .logo-nav-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    /* Hace que el texto resalte más */
+}
+
+
+/* --- LOGO EN EL SPLASH SCREEN --- */
+.logo-splash-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+    padding: 4px;
+    /* Sombra más pronunciada para darle profundidad de App */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    /* Agregamos una animación infinita */
+    animation: latidoApp 2s infinite ease-in-out;
+    margin-bottom: 20px;
+}
+
+/* Opcional: Ajuste para pantallas móviles muy pequeñas */
+@media (max-width: 400px) {
+    .logo-text {
+        font-size: 1.1rem;
+        /* Achica un poco el texto si la pantalla es estrecha */
+    }
+
+    .logo-nav-img {
+        width: 40px;
+        height: 40px;
+    }
+}

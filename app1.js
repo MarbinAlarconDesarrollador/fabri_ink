@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     // 6. LIGHTBOX
     // ============================================================
-    const lightbox    = document.getElementById('lightbox');
+    const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn    = document.querySelector('.close-lightbox');
+    const closeBtn = document.querySelector('.close-lightbox');
 
     if (lightbox && lightboxImg) {
         document.querySelectorAll('.masonry-item img').forEach(img => {
@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const nombre = document.getElementById('nombre')?.value.trim();
-            const idea   = document.getElementById('idea')?.value.trim();
-            const zona   = document.getElementById('zona')?.value.trim();
+            const idea = document.getElementById('idea')?.value.trim();
+            const zona = document.getElementById('zona')?.value.trim();
             const tamano = document.getElementById('tamano')?.value.trim();
 
             if (!nombre || !idea || !zona || !tamano) return;
@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     // 10. CUSTOM CURSOR (desktop/fine pointer only)
     // ============================================================
-    const cursor     = document.getElementById('cursor');
-    const cursorDot  = cursor?.querySelector('.cursor-dot');
+    const cursor = document.getElementById('cursor');
+    const cursorDot = cursor?.querySelector('.cursor-dot');
     const cursorRing = cursor?.querySelector('.cursor-ring');
 
     // Hide cursor completely on touch devices
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cursor && window.matchMedia('(pointer: fine)').matches) {
         let mouseX = 0, mouseY = 0;
-        let ringX  = 0, ringY  = 0;
+        let ringX = 0, ringY = 0;
         let animId;
 
         document.addEventListener('mousemove', e => {
@@ -254,13 +254,170 @@ document.addEventListener('DOMContentLoaded', () => {
 }); // end DOMContentLoaded
 
 
+
 // ============================================================
-// 11. SERVICE WORKER (PWA)
+// 11. VIDEO CARDS — play/pause/mute + progress bar
+// ============================================================
+document.querySelectorAll('.video-card').forEach(card => {
+    const video = card.querySelector('.video-player');
+    const playBtn = card.querySelector('.video-play-btn');
+    const muteBtn = card.querySelector('.video-mute-btn');
+    const fill = card.querySelector('.video-progress-fill');
+
+    if (!video) return;
+
+    // Autoplay on hover (muted)
+    card.addEventListener('mouseenter', () => {
+        video.play().catch(() => { });
+    });
+    card.addEventListener('mouseleave', () => {
+        video.pause();
+    });
+
+    // Play/pause toggle
+    playBtn?.addEventListener('click', e => {
+        e.stopPropagation();
+        if (video.paused) {
+            video.play();
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            video.pause();
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+
+    // Mute toggle
+    muteBtn?.addEventListener('click', e => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        muteBtn.innerHTML = video.muted
+            ? '<i class="fas fa-volume-mute"></i>'
+            : '<i class="fas fa-volume-up"></i>';
+    });
+
+    // Progress bar
+    video.addEventListener('timeupdate', () => {
+        if (video.duration) {
+            fill.style.width = (video.currentTime / video.duration * 100) + '%';
+        }
+    });
+});
+
+
+// ============================================================
+// 12. FOTOS TABS
+// ============================================================
+const fotoTabs = document.querySelectorAll('.foto-tab');
+const fotoItems = document.querySelectorAll('.foto-item[data-tab-content]');
+
+fotoTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        fotoTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.getAttribute('data-tab');
+        fotoItems.forEach((item, i) => {
+            const match = item.getAttribute('data-tab-content') === target;
+            if (match) {
+                item.style.display = 'block';
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(16px)';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, i * 50 + 20);
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+// ============================================================
+// 13. FOTOS LIGHTBOX (con navegación prev/next)
+// ============================================================
+const fotosLB = document.getElementById('lightbox-fotos');
+const fotosImg = document.getElementById('lightbox-fotos-img');
+const closeFotLB = document.getElementById('close-fotos-lb');
+const prevBtn = document.getElementById('lb-prev');
+const nextBtn = document.getElementById('lb-next');
+
+let currentFotoIndex = 0;
+let visibleFotos = [];
+
+const getVisibleFotos = () =>
+    [...document.querySelectorAll('.foto-item[data-tab-content]')]
+        .filter(el => el.style.display !== 'none');
+
+const openFotoLB = (index) => {
+    visibleFotos = getVisibleFotos();
+    currentFotoIndex = index;
+    const img = visibleFotos[currentFotoIndex]?.querySelector('img');
+    if (img && fotosImg) {
+        fotosImg.src = img.src;
+        fotosImg.alt = img.alt;
+    }
+    fotosLB?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+const closeFotoLB = () => {
+    fotosLB?.classList.remove('active');
+    document.body.style.overflow = '';
+};
+
+if (fotosLB) {
+    document.querySelectorAll('.foto-item').forEach((item, i) => {
+        item.addEventListener('click', () => {
+            visibleFotos = getVisibleFotos();
+            const idx = visibleFotos.indexOf(item);
+            if (idx !== -1) openFotoLB(idx);
+        });
+    });
+
+    closeFotLB?.addEventListener('click', closeFotoLB);
+
+    fotosLB.addEventListener('click', e => {
+        if (!e.target.closest('.lightbox-inner') &&
+            !e.target.closest('.lb-nav') &&
+            !e.target.closest('.close-lightbox')) closeFotoLB();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        visibleFotos = getVisibleFotos();
+        currentFotoIndex = (currentFotoIndex - 1 + visibleFotos.length) % visibleFotos.length;
+        const img = visibleFotos[currentFotoIndex]?.querySelector('img');
+        if (img && fotosImg) { fotosImg.src = img.src; fotosImg.alt = img.alt; }
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        visibleFotos = getVisibleFotos();
+        currentFotoIndex = (currentFotoIndex + 1) % visibleFotos.length;
+        const img = visibleFotos[currentFotoIndex]?.querySelector('img');
+        if (img && fotosImg) { fotosImg.src = img.src; fotosImg.alt = img.alt; }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!fotosLB.classList.contains('active')) return;
+        if (e.key === 'Escape') closeFotoLB();
+        if (e.key === 'ArrowLeft') prevBtn?.click();
+        if (e.key === 'ArrowRight') nextBtn?.click();
+    });
+}
+ // end DOMContentLoaded
+
+
+// ============================================================
+// 14. SERVICE WORKER (PWA)
 // ============================================================
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg  => console.log('✅ SW registrado:', reg.scope))
+            .then(reg => console.log('✅ SW registrado:', reg.scope))
             .catch(err => console.warn('❌ SW error:', err));
     });
 }
+
+

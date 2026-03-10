@@ -42,7 +42,9 @@
             <div class="splash-lines">
                 <span></span><span></span><span></span>
             </div>
-            <h1 class="splash-logo">INK<span>.</span></h1>
+            <div class="splash-logo">
+                <img src="img/F.png" alt="Fabricio Amezquita TATTOO" class="logo-splash-img">
+            </div>
             <p class="splash-sub">TATTOO STUDIO</p>
             <div class="splash-progress">
                 <div class="splash-bar"></div>
@@ -50,9 +52,13 @@
         </div>
     </div>
 
+
     <!-- ====== NAVBAR ====== -->
     <nav class="navbar" id="navbar">
-        <div class="nav-logo">INK<span class="accent-dot">.</span></div>
+        <a href="#inicio" class="logo" style="text-decoration: none;">
+            <img src="img/pwa-icon-192.png" alt="Logo" class="logo-nav-img">
+
+        </a>
         <div class="nav-links">
             <a href="#galeria" class="nav-link">Galería</a>
             <a href="#zonas" class="nav-link">Zonas</a>
@@ -63,6 +69,7 @@
             <span></span><span></span><span></span>
         </button>
     </nav>
+
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
@@ -158,7 +165,7 @@
 
         <div class="masonry-grid" id="masonry-grid">
             <div class="masonry-item" data-categoria="blackwork">
-                <img src="img/blackwork.jpeg" alt="Tatuaje Blackwork" loading="lazy">
+                <img src="img/rodilla.jpg" alt="Tatuaje Blackwork" loading="lazy">
                 <div class="item-overlay">
                     <div class="overlay-content">
                         <span class="overlay-cat">Blackwork</span>
@@ -188,7 +195,7 @@
                 <div class="item-num">03</div>
             </div>
             <div class="masonry-item" data-categoria="blackwork">
-                <img src="img/blackwork1.jpeg" alt="Tatuaje Blackwork" loading="lazy">
+                <img src="img/brazo.jpeg" alt="Tatuaje Blackwork" loading="lazy">
                 <div class="item-overlay">
                     <div class="overlay-content">
                         <span class="overlay-cat">Blackwork</span>
@@ -198,7 +205,7 @@
                 <div class="item-num">04</div>
             </div>
             <div class="masonry-item" data-categoria="realismo">
-                <img src="img/realismo1.jpg" alt="Tatuaje Realismo" loading="lazy">
+                <img src="img/queen.jpeg" alt="Tatuaje Realismo" loading="lazy">
                 <div class="item-overlay">
                     <div class="overlay-content">
                         <span class="overlay-cat">Realismo</span>
@@ -209,6 +216,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- ====== CUIDADOS ====== -->
     <section id="cuidados" class="cuidados-section reveal">
@@ -238,6 +247,283 @@
                         <li>No exponer al sol directo.</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== VIDEOS ====== -->
+    <section id="videos" class="videos-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label"><span class="label-line"></span> Proceso en vivo</div>
+                <h2 class="section-title">TINTA EN<br><em>MOVIMIENTO</em></h2>
+            </div>
+
+            <div class="videos-grid">
+                <!-- Video principal featured -->
+                <div class="video-card video-card--featured reveal-child">
+                    <div class="video-wrap">
+                        <video src="video/antebrazo2.mp4" poster="img/video-poster.jpg" muted loop playsinline
+                            preload="metadata" class="video-player" data-autoplay-on-hover>
+                        </video>
+                        <div class="video-controls">
+                            <button class="video-play-btn" aria-label="Reproducir">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="video-mute-btn" aria-label="Sonido">
+                                <i class="fas fa-volume-mute"></i>
+                            </button>
+                        </div>
+                        <div class="video-progress-bar">
+                            <div class="video-progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="video-meta">
+                        <span class="video-cat">Blackwork</span>
+                        <h3 class="video-title">Proceso Completo — Antebrazo</h3>
+                        <p class="video-duration"><i class="fas fa-clock"></i> Sesión de 4h</p>
+                    </div>
+                    <div class="video-num">01</div>
+                </div>
+
+                <!-- Columna secundaria -->
+                <div class="videos-secondary">
+                    <div class="video-card reveal-child">
+                        <div class="video-wrap">
+                            <video src="video/brazo.mp4" poster="img/video-poster.jpg" muted loop playsinline
+                                preload="metadata" class="video-player" data-autoplay-on-hover>
+                            </video>
+                            <div class="video-controls">
+                                <button class="video-play-btn" aria-label="Reproducir">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="video-mute-btn" aria-label="Sonido">
+                                    <i class="fas fa-volume-mute"></i>
+                                </button>
+                            </div>
+                            <div class="video-progress-bar">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="video-meta">
+                            <span class="video-cat">Realismo</span>
+                            <h3 class="video-title">Brazo — Detalle en Proceso</h3>
+                        </div>
+                        <div class="video-num">02</div>
+                    </div>
+
+                    <div class="video-card reveal-child">
+                        <div class="video-wrap">
+                            <video src="video/leon.mp4" poster="img/video-poster.jpg" muted loop playsinline
+                                preload="metadata" class="video-player" data-autoplay-on-hover>
+                            </video>
+                            <div class="video-controls">
+                                <button class="video-play-btn" aria-label="Reproducir">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="video-mute-btn" aria-label="Sonido">
+                                    <i class="fas fa-volume-mute"></i>
+                                </button>
+                            </div>
+                            <div class="video-progress-bar">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="video-meta">
+                            <span class="video-cat">Realismo</span>
+                            <h3 class="video-title">León — Sombreado Intenso</h3>
+                        </div>
+                        <div class="video-num">03</div>
+                    </div>
+                </div>
+
+                <!-- Fila inferior -->
+                <div class="video-card video-card--wide reveal-child">
+                    <div class="video-wrap">
+                        <video src="video/bulma.mp4" poster="img/video-poster.jpg" muted loop playsinline
+                            preload="metadata" class="video-player" data-autoplay-on-hover>
+                        </video>
+                        <div class="video-controls">
+                            <button class="video-play-btn" aria-label="Reproducir">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="video-mute-btn" aria-label="Sonido">
+                                <i class="fas fa-volume-mute"></i>
+                            </button>
+                        </div>
+                        <div class="video-progress-bar">
+                            <div class="video-progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="video-meta">
+                        <span class="video-cat">Fine Line</span>
+                        <h3 class="video-title">Bulma — Fine Line Detallado</h3>
+                    </div>
+                    <div class="video-num">04</div>
+                </div>
+
+                <div class="video-card video-card--wide reveal-child">
+                    <div class="video-wrap">
+                        <video src="video/mano.mp4" poster="img/video-poster.jpg" muted loop playsinline
+                            preload="metadata" class="video-player" data-autoplay-on-hover>
+                        </video>
+                        <div class="video-controls">
+                            <button class="video-play-btn" aria-label="Reproducir">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="video-mute-btn" aria-label="Sonido">
+                                <i class="fas fa-volume-mute"></i>
+                            </button>
+                        </div>
+                        <div class="video-progress-bar">
+                            <div class="video-progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="video-meta">
+                        <span class="video-cat">Blackwork</span>
+                        <h3 class="video-title">Mano — Intricado Blackwork</h3>
+                    </div>
+                    <div class="video-num">05</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOTOS ====== -->
+    <section id="fotos" class="fotos-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label"><span class="label-line"></span> Antes &amp; Después</div>
+                <h2 class="section-title">FOTOS<br><em>DEL PROCESO</em></h2>
+            </div>
+
+            <!-- Tabs -->
+            <div class="fotos-tabs">
+                <button class="foto-tab active" data-tab="proceso">Proceso</button>
+                <button class="foto-tab" data-tab="resultado">Resultado Final</button>
+                <button class="foto-tab" data-tab="cicatrizacion">Cicatrización</button>
+            </div>
+
+            <!-- Grid de fotos -->
+            <div class="fotos-grid" id="fotos-grid">
+                <!-- Proceso tab -->
+                <div class="foto-item foto-item--tall" data-tab-content="proceso">
+                    <img src="img/convencion.jpeg" alt="Proceso Blackwork" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Blackwork</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge"><i class="fas fa-needle"></i> En proceso</div>
+                </div>
+                <div class="foto-item" data-tab-content="proceso">
+                    <img src="img/convencion2.jpeg" alt="Proceso Realismo" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Realismo</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge"><i class="fas fa-needle"></i> En proceso</div>
+                </div>
+                <div class="foto-item" data-tab-content="proceso">
+                    <img src="img/fabri1.jpeg" alt="Proceso Fine Line" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Fine Line</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge"><i class="fas fa-needle"></i> En proceso</div>
+                </div>
+                <div class="foto-item foto-item--tall" data-tab-content="proceso">
+                    <img src="img/fabri2.jpeg" alt="Proceso Blackwork 2" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Blackwork</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge"><i class="fas fa-needle"></i> En proceso</div>
+                </div>
+
+                <!-- Resultado tab (hidden initially) -->
+                <div class="foto-item" data-tab-content="resultado" style="display:none">
+                    <img src="img/foto1.jpeg" alt="Resultado Final Realismo" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Realismo</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--gold"><i class="fas fa-check-circle"></i> Finalizado</div>
+                </div>
+                <div class="foto-item foto-item--tall" data-tab-content="resultado" style="display:none">
+                    <img src="img/leon.jpeg" alt="Resultado Blackwork" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Blackwork</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--gold"><i class="fas fa-check-circle"></i> Finalizado</div>
+                </div>
+                <div class="foto-item" data-tab-content="resultado" style="display:none">
+                    <img src="img/rodilla.jpg" alt="Resultado Fine Line" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">Fine Line</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--gold"><i class="fas fa-check-circle"></i> Finalizado</div>
+                </div>
+
+                <!-- Cicatrización tab (hidden initially) -->
+                <div class="foto-item" data-tab-content="cicatrizacion" style="display:none">
+                    <img src="img/brazo.jpeg" alt="Cicatrización 1" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">7 días</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--green"><i class="fas fa-heart"></i> Sanando bien</div>
+                </div>
+                <div class="foto-item foto-item--tall" data-tab-content="cicatrizacion" style="display:none">
+                    <img src="img/leon.jpeg" alt="Cicatrización 2" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">14 días</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--green"><i class="fas fa-heart"></i> Sanando bien</div>
+                </div>
+                <div class="foto-item" data-tab-content="cicatrizacion" style="display:none">
+                    <img src="img/convencion.jpeg" alt="Cicatrización 3" loading="lazy">
+                    <div class="foto-overlay">
+                        <div class="foto-overlay-content">
+                            <span class="foto-tag">30 días</span>
+                            <span class="foto-expand"><i class="fas fa-expand-alt"></i></span>
+                        </div>
+                    </div>
+                    <div class="foto-badge foto-badge--green"><i class="fas fa-heart"></i> Curado</div>
+                </div>
+            </div>
+
+            <!-- Lightbox Fotos -->
+            <div id="lightbox-fotos" class="lightbox" role="dialog" aria-modal="true">
+                <button class="close-lightbox" id="close-fotos-lb" aria-label="Cerrar"><i
+                        class="fas fa-times"></i></button>
+                <button class="lb-nav lb-prev" id="lb-prev" aria-label="Anterior"><i
+                        class="fas fa-chevron-left"></i></button>
+                <div class="lightbox-inner">
+                    <img class="lightbox-img" id="lightbox-fotos-img" alt="Foto ampliada">
+                </div>
+                <button class="lb-nav lb-next" id="lb-next" aria-label="Siguiente"><i
+                        class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -410,55 +696,47 @@
                 <h2 class="section-title">@INKMASTER<br><em>STUDIO</em></h2>
             </div>
 
-            <!-- OPCIÓN A: Feed automático con Behold.so (recomendado) -->
-            <!-- Para activar: crea cuenta gratis en behold.so, obtén tu widget ID y reemplaza TU_WIDGET_ID -->
-            <!--
-            <div id="behold-widget" class="instagram-behold">
-                <script src="https://w.behold.so/widget.js" type="module"></script>
-                <behold-widget feed-id="TU_WIDGET_ID"></behold-widget>
-            </div>
-            -->
-
-            <!-- OPCIÓN B: Grid manual (activo por defecto — reemplaza los src con tus fotos reales) -->
             <div class="instagram-grid" id="ig-grid">
-                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
-                    <img src="img/blackwork.jpeg" alt="Post Instagram" loading="lazy">
+                <div class="ig-item reveal-child">
+                    <img src="img/fabri1.jpeg" alt="Tattoo Work 1" loading="lazy">
                     <div class="ig-overlay">
                         <i class="fab fa-instagram"></i>
                     </div>
-                </a>
-                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
-                    <img src="img/realismo.webp" alt="Post Instagram" loading="lazy">
-                    <div class="ig-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
-                    <img src="img/realismo2.jpg" alt="Post Instagram" loading="lazy">
-                    <div class="ig-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
-                    <img src="img/Instagram_files/607063462_17857697427582966_6533551753938778372_n.jpg" alt="Post Instagram" loading="lazy">
-                    <div class="ig-overlay">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </a>
-                <div class="ig-item ig-item--video reveal-child">
-                    <video src="img/video2.mp4" autoplay muted loop playsinline poster="img/video-poster.jpg"></video>
-                    <div class="ig-overlay">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <span class="ig-video-badge"><i class="fas fa-video"></i></span>
                 </div>
-                <!-- Item con VIDEO (reemplaza el 4to ig-item) -->
-                <div class="ig-item ig-item--video reveal-child">
-                    <video src="img/video.mp4" autoplay muted loop playsinline poster="img/video-poster.jpg"></video>
+
+                <div class="ig-item reveal-child">
+                    <img src="img/fabri2.jpeg" alt="Tattoo Work 2" loading="lazy">
                     <div class="ig-overlay">
-                        <i class="fas fa-play"></i>
+                        <i class="fab fa-instagram"></i>
                     </div>
-                    <span class="ig-video-badge"><i class="fas fa-video"></i></span>
+                </div>
+
+                <div class="ig-item reveal-child">
+                    <img src="img/convencion.jpeg" alt="Tattoo Work 3" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                <div class="ig-item reveal-child">
+                    <img src="img/convencion2.jpeg" alt="Tattoo Work 4" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                <div class="ig-item reveal-child">
+                    <img src="img/foto1.jpeg" alt="Tattoo Work 5" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                <div class="ig-item reveal-child">
+                    <img src="img/queen.jpeg" alt="Tattoo Work 6" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </div>
             </div>
 
@@ -471,6 +749,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- ====== FOOTER ====== -->
     <footer class="site-footer">
