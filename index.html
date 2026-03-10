@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <meta name="description"
+        content="Ink Master Tattoo Studio — Custom Tattoos & Fine Art. Blackwork, Realismo, Fine Line.">
+    <title>INK. | Tattoo Studio</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts: Display + Body pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Space+Mono:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ====== NOISE OVERLAY ====== -->
+    <div class="noise-overlay"></div>
+
+    <!-- ====== CURSOR ====== -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- ====== SPLASH SCREEN ====== -->
+    <div id="splash-screen">
+        <div class="splash-inner">
+            <div class="splash-lines">
+                <span></span><span></span><span></span>
+            </div>
+            <h1 class="splash-logo">INK<span>.</span></h1>
+            <p class="splash-sub">TATTOO STUDIO</p>
+            <div class="splash-progress">
+                <div class="splash-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">INK<span class="accent-dot">.</span></div>
+        <div class="nav-links">
+            <a href="#galeria" class="nav-link">Galería</a>
+            <a href="#zonas" class="nav-link">Zonas</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#cotizar" class="nav-link nav-cta">Cotizar <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#galeria" class="mob-link">Galería</a>
+        <a href="#zonas" class="mob-link">Zonas</a>
+        <a href="#faq" class="mob-link">FAQ</a>
+        <a href="#cuidados" class="mob-link">Cuidados</a>
+        <a href="#cotizar" class="mob-link mob-cta">Cotizar →</a>
+    </div>
+
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="hero">
+        <div class="hero-bg" id="hero-bg" style="background-image: url('img/banner.webp');"></div>
+        <div class="hero-overlay"></div>
+
+        <!-- Decorative vertical text -->
+        <div class="hero-vertical-text">SINCE 2019 — BOGOTÁ CO</div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>Custom Tattoos &amp; Fine Art</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="line-1">TU PIEL,</span>
+                <span class="line-2">MI <em>LIENZO</em></span>
+            </h1>
+            <p class="hero-subtitle">Agenda cerrada para 2026.<br>Abriendo cupos <strong>muy pronto.</strong></p>
+            <div class="hero-actions">
+                <a href="#cotizar" class="btn-primary">
+                    <span>Cotizar Tatuaje</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#galeria" class="btn-ghost">Ver Portafolio</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">+500</span><span class="stat-label">Tatuajes</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">7</span><span class="stat-label">Años de exp.</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Estilos</span></div>
+        </div>
+    </header>
+
+    <!-- ====== MARQUEE ====== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>BLACKWORK</span><span class="sep">✦</span>
+                <span>FINE LINE</span><span class="sep">✦</span>
+                <span>REALISMO</span><span class="sep">✦</span>
+                <span>CUSTOM INK</span><span class="sep">✦</span>
+                <span>BOGOTÁ</span><span class="sep">✦</span>
+                <span>BLACKWORK</span><span class="sep">✦</span>
+                <span>FINE LINE</span><span class="sep">✦</span>
+                <span>REALISMO</span><span class="sep">✦</span>
+                <span>CUSTOM INK</span><span class="sep">✦</span>
+                <span>BOGOTÁ</span><span class="sep">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== GALLERY ====== -->
+    <section id="galeria" class="gallery-section reveal">
+        <div class="section-header">
+            <div class="section-label"><span class="label-line"></span> Portafolio</div>
+            <h2 class="section-title">TRABAJOS<br><em>RECIENTES</em></h2>
+        </div>
+
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">
+                <span>Todos</span>
+            </button>
+            <button class="filter-btn" data-filter="blackwork">
+                <span>Blackwork</span>
+            </button>
+            <button class="filter-btn" data-filter="realismo">
+                <span>Realismo</span>
+            </button>
+            <button class="filter-btn" data-filter="fineline">
+                <span>Fine Line</span>
+            </button>
+        </div>
+
+        <div class="masonry-grid" id="masonry-grid">
+            <div class="masonry-item" data-categoria="blackwork">
+                <img src="img/blackwork.jpeg" alt="Tatuaje Blackwork" loading="lazy">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <span class="overlay-cat">Blackwork</span>
+                        <span class="overlay-zoom"><i class="fas fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="item-num">01</div>
+            </div>
+            <div class="masonry-item" data-categoria="realismo">
+                <img src="img/realismo.webp" alt="Tatuaje Realismo" loading="lazy">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <span class="overlay-cat">Realismo</span>
+                        <span class="overlay-zoom"><i class="fas fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="item-num">02</div>
+            </div>
+            <div class="masonry-item" data-categoria="fineline">
+                <img src="img/line.webp" alt="Tatuaje Fine Line" loading="lazy">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <span class="overlay-cat">Fine Line</span>
+                        <span class="overlay-zoom"><i class="fas fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="item-num">03</div>
+            </div>
+            <div class="masonry-item" data-categoria="blackwork">
+                <img src="img/blackwork1.jpeg" alt="Tatuaje Blackwork" loading="lazy">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <span class="overlay-cat">Blackwork</span>
+                        <span class="overlay-zoom"><i class="fas fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="item-num">04</div>
+            </div>
+            <div class="masonry-item" data-categoria="realismo">
+                <img src="img/realismo1.jpg" alt="Tatuaje Realismo" loading="lazy">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <span class="overlay-cat">Realismo</span>
+                        <span class="overlay-zoom"><i class="fas fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="item-num">05</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CUIDADOS ====== -->
+    <section id="cuidados" class="cuidados-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label"><span class="label-line"></span> Guía Post-Tatuaje</div>
+                <h2 class="section-title">CÓMO CURAR<br><em>TU ARTE</em></h2>
+            </div>
+            <div class="cuidados-grid">
+                <div class="cuidado-card reveal-child">
+                    <div class="cuidado-num">01</div>
+                    <h3>Primeras 3 Horas</h3>
+                    <p>Mantén el vendaje. No lo retires hasta llegar a un lugar limpio. Lava tus manos antes de tocarlo.
+                    </p>
+                </div>
+                <div class="cuidado-card reveal-child">
+                    <div class="cuidado-num">02</div>
+                    <h3>Lavado Suave</h3>
+                    <p>Usa jabón neutro y agua tibia. No frotes, deja que el agua corra sobre el tatuaje.</p>
+                </div>
+                <div class="cuidado-card cuidado-warning reveal-child">
+                    <div class="cuidado-num">⚠</div>
+                    <h3>Lo que NO debes hacer</h3>
+                    <ul>
+                        <li>No rascar ni quitar costras.</li>
+                        <li>No sumergir en piscinas o mar.</li>
+                        <li>No exponer al sol directo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ZONAS ====== -->
+    <section id="zonas" class="zonas-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label"><span class="label-line"></span> ¿Dónde duele más?</div>
+                <h2 class="section-title">MEJORES<br><em>ZONAS</em></h2>
+            </div>
+            <div class="zonas-grid">
+                <div class="zona-card reveal-child">
+                    <div class="zona-pain pain-low">Dolor: LOW</div>
+                    <div class="zona-body">
+                        <h3>Antebrazo</h3>
+                        <p>La zona reina. Ideal para primerizos por su baja sensibilidad y excelente curación.</p>
+                    </div>
+                    <div class="zona-arrow">→</div>
+                </div>
+                <div class="zona-card reveal-child">
+                    <div class="zona-pain pain-mid">Dolor: MID</div>
+                    <div class="zona-body">
+                        <h3>Muslo</h3>
+                        <p>Mucho espacio para piezas grandes. Fácil de ocultar o mostrar según la ocasión.</p>
+                    </div>
+                    <div class="zona-arrow">→</div>
+                </div>
+                <div class="zona-card zona-card--hot reveal-child">
+                    <div class="zona-pain pain-high">Dolor: HIGH</div>
+                    <div class="zona-body">
+                        <h3>Costillas</h3>
+                        <p>Solo para valientes. El resultado estético es increíble, pero requiere resistencia.</p>
+                    </div>
+                    <div class="zona-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section id="faq" class="faq-section reveal">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="section-label"><span class="label-line"></span> Dudas Comunes <span
+                        class="label-line"></span></div>
+                <h2 class="section-title">PREGUNTAS<br><em>FRECUENTES</em></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es el precio mínimo?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestro precio base es de <strong>$150.000 COP</strong>. Esto cubre materiales descartables
+                            premium y el tiempo mínimo de preparación de la mesa y diseño.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Puedo ir acompañado?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Por normas de higiene y espacio, solo se permite <strong>un acompañante</strong> por persona.
+                            En sesiones largas, recomendamos venir solo para mayor comodidad.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Duele mucho tatuarse?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El dolor es subjetivo. Depende mucho de la zona y de tu estado físico ese día. <strong>¡Ven
+                                bien desayunado y descansado!</strong></p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Con cuánto tiempo debo reservar?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Actualmente la agenda está cerrada. Cuando abran los cupos, la reserva requiere un
+                            <strong>anticipo del 30%</strong> del valor total del tatuaje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BLOG ====== -->
+    <section id="blog" class="blog-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label"><span class="label-line"></span> Cultura Ink</div>
+                <h2 class="section-title">ARTÍCULOS<br><em>DE INTERÉS</em></h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card reveal-child">
+                    <div class="blog-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1590246814883-578ae7be9402?q=80&w=600')">
+                        <span class="blog-tag">Tendencias 2026</span>
+                    </div>
+                    <div class="blog-body">
+                        <h3>El resurgir del Blackwork</h3>
+                        <p>Por qué el estilo sólido y oscuro está dominando la escena este año...</p>
+                        <a href="#" class="blog-read">Leer más <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card reveal-child">
+                    <div class="blog-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600')">
+                        <span class="blog-tag">Salud</span>
+                    </div>
+                    <div class="blog-body">
+                        <h3>Alimentación y Tinta</h3>
+                        <p>Lo que deberías comer antes de tu sesión para aguantar mejor el dolor...</p>
+                        <a href="#" class="blog-read">Leer más <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== COTIZACIÓN ====== -->
+    <section id="cotizar" class="cotizar-section reveal">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="section-label"><span class="label-line"></span> ¿Tienes una idea? <span
+                        class="label-line"></span></div>
+                <h2 class="section-title">EMPIEZA TU<br><em>PROYECTO</em></h2>
+            </div>
+            <form id="tattoo-form" class="quote-form" novalidate>
+                <div class="form-field">
+                    <label for="idea">01 — Describe tu idea</label>
+                    <textarea id="idea" placeholder="Cuéntame qué quieres hacerte…" required rows="4"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="zona">02 — Zona del cuerpo</label>
+                        <input type="text" id="zona" placeholder="Ej: Antebrazo" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="tamano">03 — Tamaño aprox. (cm)</label>
+                        <input type="number" id="tamano" placeholder="Ej: 15" required min="1">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="nombre">04 — Tu nombre</label>
+                    <input type="text" id="nombre" placeholder="¿Cómo te llamas?" required>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <span>Enviar a WhatsApp</span>
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ====== INSTAGRAM FEED ====== -->
+    <section id="instagram" class="instagram-section reveal">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="section-label"><span class="label-line"></span> Síguenos <span class="label-line"></span>
+                </div>
+                <h2 class="section-title">@INKMASTER<br><em>STUDIO</em></h2>
+            </div>
+
+            <!-- OPCIÓN A: Feed automático con Behold.so (recomendado) -->
+            <!-- Para activar: crea cuenta gratis en behold.so, obtén tu widget ID y reemplaza TU_WIDGET_ID -->
+            <!--
+            <div id="behold-widget" class="instagram-behold">
+                <script src="https://w.behold.so/widget.js" type="module"></script>
+                <behold-widget feed-id="TU_WIDGET_ID"></behold-widget>
+            </div>
+            -->
+
+            <!-- OPCIÓN B: Grid manual (activo por defecto — reemplaza los src con tus fotos reales) -->
+            <div class="instagram-grid" id="ig-grid">
+                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
+                    <img src="img/blackwork.jpeg" alt="Post Instagram" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
+                    <img src="img/realismo.webp" alt="Post Instagram" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
+                    <img src="img/realismo2.jpg" alt="Post Instagram" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-item reveal-child">
+                    <img src="img/Instagram_files/607063462_17857697427582966_6533551753938778372_n.jpg" alt="Post Instagram" loading="lazy">
+                    <div class="ig-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <div class="ig-item ig-item--video reveal-child">
+                    <video src="img/video2.mp4" autoplay muted loop playsinline poster="img/video-poster.jpg"></video>
+                    <div class="ig-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="ig-video-badge"><i class="fas fa-video"></i></span>
+                </div>
+                <!-- Item con VIDEO (reemplaza el 4to ig-item) -->
+                <div class="ig-item ig-item--video reveal-child">
+                    <video src="img/video.mp4" autoplay muted loop playsinline poster="img/video-poster.jpg"></video>
+                    <div class="ig-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="ig-video-badge"><i class="fas fa-video"></i></span>
+                </div>
+            </div>
+
+            <div class="ig-cta-wrap">
+                <a href="https://instagram.com/inkmaster" target="_blank" rel="noopener" class="ig-follow-btn">
+                    <i class="fab fa-instagram"></i>
+                    <span>Seguir en Instagram</span>
+                    <span class="ig-handle">@inkmaster</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">INK<span>.</span></div>
+            <p class="footer-sub">Bogotá, Colombia — Est. 2019</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/573205578471" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Ink Master Studio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ====== LIGHTBOX ====== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="close-lightbox" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <div class="lightbox-inner">
+            <img class="lightbox-img" id="lightbox-img" alt="Tatuaje ampliado">
+        </div>
+    </div>
+
+    <script src="app1.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+
+</html>
