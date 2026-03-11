@@ -2598,3 +2598,156 @@ textarea:focus {
 .back-to-home:hover {
     color: var(--accent);
 }
+
+/* ============================================================
+   15. ACCESSIBILITY WIDGET
+   ============================================================ */
+.a11y-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+    font-family: var(--font-body);
+}
+
+.a11y-toggle {
+    background-color: var(--accent);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(232, 50, 26, 0.4);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer !important; /* Excepción al cursor personalizado */
+}
+
+.a11y-toggle:hover {
+    background-color: var(--accent-2);
+    transform: scale(1.1);
+}
+
+.a11y-menu {
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    width: 260px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s var(--ease-out-expo);
+}
+
+.a11y-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.a11y-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.a11y-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+#a11y-close {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer !important;
+}
+
+#a11y-close:hover { color: var(--accent); }
+
+.a11y-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.a11y-btn {
+    background: var(--bg-3);
+    color: var(--text);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    text-align: left;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer !important;
+    border: 1px solid transparent;
+}
+
+.a11y-btn:hover, .a11y-btn.active-filter {
+    background: var(--surface);
+    border-color: var(--accent);
+}
+
+.a11y-reset {
+    margin-top: 10px;
+    background: rgba(232, 50, 26, 0.1);
+    color: var(--accent);
+}
+
+/* --- CLASES DE ACCESIBILIDAD (MODIFICADORES) --- */
+
+/* Texto */
+html.a11y-text-lg { font-size: 18px !important; }
+html.a11y-text-sm { font-size: 14px !important; }
+
+/* Alto contraste */
+html.a11y-hc body, 
+html.a11y-hc .navbar.scrolled, 
+html.a11y-hc .mobile-menu, 
+html.a11y-hc .hero-overlay {
+    background: #000 !important;
+    color: #fff !important;
+}
+html.a11y-hc * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+html.a11y-hc .text-muted, 
+html.a11y-hc p, 
+html.a11y-hc span, 
+html.a11y-hc a {
+    color: #fff !important;
+}
+html.a11y-hc .accent-dot, 
+html.a11y-hc em {
+    color: #FFFF00 !important; /* Amarillo de alto contraste */
+}
+
+/* Escala de Grises */
+html.a11y-gray {
+    filter: grayscale(100%) !important;
+}
+
+/* Sin Animaciones */
+html.a11y-no-anim *, 
+html.a11y-no-anim *::before, 
+html.a11y-no-anim *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}

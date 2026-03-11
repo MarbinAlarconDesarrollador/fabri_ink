@@ -211,6 +211,38 @@
         </div>
     </div>
 
+    <div class="a11y-widget" id="a11y-widget">
+        <button class="a11y-toggle" id="a11y-toggle" aria-label="Abrir menú de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="a11y-menu" id="a11y-menu" aria-hidden="true">
+            <div class="a11y-header">
+                <h3>Accesibilidad</h3>
+                <button id="a11y-close" aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="a11y-options">
+                <button class="a11y-btn" data-action="increase-text">
+                    <i class="fas fa-search-plus"></i> Aumentar Texto
+                </button>
+                <button class="a11y-btn" data-action="decrease-text">
+                    <i class="fas fa-search-minus"></i> Reducir Texto
+                </button>
+                <button class="a11y-btn" data-action="high-contrast">
+                    <i class="fas fa-adjust"></i> Alto Contraste
+                </button>
+                <button class="a11y-btn" data-action="grayscale">
+                    <i class="fas fa-tint-slash"></i> Escala de Grises
+                </button>
+                <button class="a11y-btn" data-action="no-animations">
+                    <i class="fas fa-stop-circle"></i> Sin Animaciones
+                </button>
+                <button class="a11y-btn a11y-reset" data-action="reset">
+                    <i class="fas fa-redo"></i> Restablecer
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="app1.js"></script>
     <script async src="//www.instagram.com/embed.js"></script>
 </body>
