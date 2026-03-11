@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <meta name="description"
+        content="Ink Master Tattoo Studio — Custom Tattoos & Fine Art. Blackwork, Realismo, Fine Line.">
+    <title>Fabricio Amezquita | Tattoo Studio</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Space+Mono:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ====== NOISE OVERLAY ====== -->
+    <div class="noise-overlay"></div>
+
+    <!-- ====== CURSOR ====== -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- ====== SPLASH SCREEN ====== -->
+    <div id="splash-screen">
+        <div class="splash-inner">
+            <div class="splash-lines">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="splash-logo" style="text-align: -webkit-center;">
+                <img src="img/F.png" alt="Fabricio Amezquita TATTOO" class="logo-splash-img">
+            </div>
+            <p class="splash-sub">FABRICIO AMEZQUITA</p>
+            <p class="splash-sub"> TATTOO STUDIO </p>
+            <div class="splash-progress">
+                <div class="splash-bar"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <a href="#inicio" class="logo" style="text-decoration: none;">
+            <img src="img/pwa-icon-192.png" alt="Logo" class="logo-nav-img">
+        </a>
+        <div class="nav-links">
+            <a href="index.html#galeria" class="nav-link">Galería</a>
+            <a href="index.html#cuidados" class="nav-link">Cuidados</a>
+            <a href="index.html#videos" class="nav-link">Videos</a>
+            <a href="index.html#fotos" class="nav-link">Fotos</a>
+            <a href="index.html#blog" class="nav-link">Blog</a>
+            <a href="index.html#instagram" class="nav-link">INK</a>
+            <a href="index.html#zonas" class="nav-link">Zonas</a>
+            <a href="index.html#faq" class="nav-link">FAQ</a>
+            <a href="index.html#cotizar" class="nav-link nav-cta">Cotizar <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#galeria" class="mob-link">Galería</a>
+        <a href="index.html#cuidados" class="mob-link">Cuidados</a>
+        <a href="index.html#videos" class="mob-link">Videos</a>
+        <a href="index.html#fotos" class="mob-link">Fotos</a>
+        <a href="index.html#blog" class="mob-link">Blog</a>
+        <a href="index.html#instagram" class="mob-link">INK</a>
+        <a href="index.html#zonas" class="mob-link">Zonas</a>
+        <a href="index.html#faq" class="mob-link">FAQ</a>
+        <a href="index.html#cotizar" class="mob-link mob-cta">Cotizar →</a>
+    </div>
+
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="hero">
+        <div class="hero-bg" id="hero-bg" style="background-image: url('img/banner.webp');"></div>
+        <div class="hero-overlay"></div>
+
+        <!-- Decorative vertical text -->
+        <div class="hero-vertical-text">SINCE 2019 — BUCRAMANGA COL</div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>Custom Tattoos &amp; Fine Art</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="line-1">TU PIEL,</span>
+                <span class="line-2">MI <em>LIENZO</em></span>
+            </h1>
+            <p class="hero-subtitle">Agenda abierta para 2026.<br>Escribenos <strong>y agenda tu cita.</strong></p>
+            <div class="hero-actions">
+                <a href="#cotizar" class="btn-primary">
+                    <span>Cotizar Tatuaje</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#galeria" class="btn-ghost">Ver Portafolio</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">+500</span><span class="stat-label">Tatuajes</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">7</span><span class="stat-label">Años de exp.</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Estilos</span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <span class="article-meta">Estética y Tendencias</span>
+            <h1>MICRO-REALISMO VS<br><em>REALISMO</em></h1>
+            <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?q=80&w=1200" alt="Estilos de tatuaje"
+                class="article-hero-img">
+        </section>
+
+        <section class="article-content">
+            <p>Al momento de elegir un tatuaje altamente detallado, los clientes suelen confundir el Realismo
+                Tradicional con el Micro-realismo. Aunque ambos buscan emular fotografías, sus técnicas, herramientas y
+                envejecimiento en la piel son completamente distintos.</p>
+
+            <h2>El Realismo Tradicional: Impacto y Durabilidad</h2>
+            <p>El realismo tradicional trabaja con contrastes altos, negros sólidos y degradados extensos. Generalmente
+                requiere piezas grandes (espalda entera, brazos completos) para que el nivel de detalle pueda respirar.
+            </p>
+            <ul>
+                <li><strong>Ventaja principal:</strong> Envejece de manera espectacular. Al usar agujas más gruesas y
+                    negros densos, el tatuaje se mantiene legible durante décadas.</li>
+                <li><strong>Ideal para:</strong> Retratos de familiares, animales salvajes de gran formato y piezas
+                    oscuras.</li>
+            </ul>
+
+            <h2>Micro-realismo: Precisión Quirúrgica</h2>
+            <p>El micro-realismo captura la misma cantidad de detalle que una pieza realista, pero en una fracción del
+                tamaño (a menudo piezas de 5 a 10 centímetros). Se hace utilizando agujas extremadamente finas (1RL o
+                3RL).</p>
+            <ul>
+                <li><strong>Ventaja principal:</strong> Permite tener piezas increíblemente detalladas y elegantes en
+                    zonas sutiles. Es menos invasivo y sana más rápido.</li>
+                <li><strong>El reto (Aging):</strong> Como las líneas son microscópicas, con el paso de los años (5-10
+                    años) la tinta tiende a expandirse ligeramente bajo la piel. Un micro-realismo que no tenga buen
+                    contraste puede verse borroso con el tiempo.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>En Ink Master Studio, Fabricio diseña los tatuajes de micro-realismo asegurando un contraste
+                    estructural fuerte, garantizando que aunque el tatuaje envejezca, no pierda su forma original.</p>
+            </div>
+
+            <h2>¿Cuál deberías elegir?</h2>
+            <p>Si buscas una pieza central, imponente y atemporal, el <strong>Realismo</strong> es tu camino. Si
+                prefieres coleccionar piezas pequeñas, discretas y altamente estéticas, el
+                <strong>Micro-realismo</strong> es la tendencia perfecta para ti.</p>
+
+            <a href="index.html#blog" class="back-to-home"><i class="fas fa-long-arrow-alt-left"></i> Volver a Cultura
+                Ink</a>
+        </section>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="img/F.png" alt="Ink Master Studio" style="width: 100px; height: 100px;">
+            </div>
+            <p class="footer-sub">Bucaramanga, Colombia — Est. 2019</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/573205578471" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">
+                © 2026 **Fabricio Amezquita** • Todos los derechos reservados. <br>
+                Desarrollado con ❤️ por <a href="https://marbinalarcondesarrollador.github.io/portafolio/"
+                    target="_blank" style="color: var(--accent); text-decoration: none;">Marbin
+                    Alarcón </a>
+                <a href="https://wa.me/573205578471" target="_blank" aria-label="WhatsApp"><i
+                        class="fab fa-whatsapp"></i> • 3205578471</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ====== LIGHTBOX ====== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="close-lightbox" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <div class="lightbox-inner">
+            <img class="lightbox-img" id="lightbox-img" alt="Tatuaje ampliado">
+        </div>
+    </div>
+
+    <script src="app1.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+
+</html>

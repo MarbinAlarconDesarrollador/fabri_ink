@@ -2492,3 +2492,109 @@ textarea:focus {
         height: 40px;
     }
 }
+
+/* ============================================================
+   ESTILOS PARA PÁGINAS DE ARTÍCULOS (BLOG)
+   ============================================================ */
+.article-hero {
+    padding: 150px 5% 80px;
+    background: var(--bg-2);
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.article-meta {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.article-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+    margin-bottom: 30px;
+    color: var(--text);
+}
+
+.article-hero-img {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin: 0 auto;
+    display: block;
+    filter: grayscale(40%);
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 5%;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.article-content h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--text);
+    margin: 50px 0 20px;
+    line-height: 1.2;
+}
+
+.article-content h3 {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    color: var(--text);
+    margin: 30px 0 15px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+.article-content ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.article-content li::marker {
+    color: var(--accent);
+}
+
+.article-content .highlight-box {
+    background: var(--bg-3);
+    border-left: 4px solid var(--accent);
+    padding: 25px;
+    margin: 40px 0;
+    font-style: italic;
+}
+
+.back-to-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    transition: color 0.3s;
+}
+
+.back-to-home:hover {
+    color: var(--accent);
+}
