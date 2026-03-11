@@ -2751,3 +2751,51 @@ html.a11y-no-anim *::after {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
 }
+
+/* ============================================================
+   16. SCROLL TO TOP
+   ============================================================ */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* En el lado opuesto al de accesibilidad */
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-3);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm); /* Cuadrado sutil como tu diseño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer !important;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* Ajuste para móviles para que no estorbe */
+@media (max-width: 768px) {
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -4,7 +4,7 @@
                Network First para imágenes remotas
    ============================================================ */
 
-const CACHE_NAME    = 'ink-master-v5';
+const CACHE_NAME    = 'ink-master-v6';
 const STATIC_ASSETS = [
     './',
     './index.html',

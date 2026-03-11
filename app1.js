@@ -251,6 +251,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
     }
 
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+        // Si el scroll baja más de 300px, muestra el botón
+        if (window.scrollY > 300) {
+            scrollTopBtn?.classList.add('show');
+        } else {
+            scrollTopBtn?.classList.remove('show');
+        }
+    }, { passive: true });
+
+    scrollTopBtn?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Scroll suave
+        });
+    });
+
 }); // end DOMContentLoaded
 
 
@@ -406,7 +424,7 @@ if (fotosLB) {
         if (e.key === 'ArrowRight') nextBtn?.click();
     });
 }
- // end DOMContentLoaded
+// end DOMContentLoaded
 
 
 // ============================================================
@@ -424,83 +442,83 @@ if ('serviceWorker' in navigator) {
 // ============================================================
 // 15. ACCESSIBILITY (A11Y) WIDGET
 // ============================================================
-    const a11yToggle = document.getElementById('a11y-toggle');
-    const a11yMenu = document.getElementById('a11y-menu');
-    const a11yClose = document.getElementById('a11y-close');
-    const a11yButtons = document.querySelectorAll('.a11y-btn');
-    const htmlEl = document.documentElement; // Etiqueta <html>
+const a11yToggle = document.getElementById('a11y-toggle');
+const a11yMenu = document.getElementById('a11y-menu');
+const a11yClose = document.getElementById('a11y-close');
+const a11yButtons = document.querySelectorAll('.a11y-btn');
+const htmlEl = document.documentElement; // Etiqueta <html>
 
-    // Estado inicial desde LocalStorage (Para PWA es clave mantener preferencias)
-    let a11yState = JSON.parse(localStorage.getItem('inkmaster_a11y')) || {
-        textModifier: null, // 'lg' o 'sm'
-        highContrast: false,
-        grayscale: false,
-        noAnimations: false
-    };
+// Estado inicial desde LocalStorage (Para PWA es clave mantener preferencias)
+let a11yState = JSON.parse(localStorage.getItem('inkmaster_a11y')) || {
+    textModifier: null, // 'lg' o 'sm'
+    highContrast: false,
+    grayscale: false,
+    noAnimations: false
+};
 
-    // Función para aplicar las clases basándose en el estado
-    const applyA11yState = () => {
-        // Limpiar clases
-        htmlEl.classList.remove('a11y-text-lg', 'a11y-text-sm', 'a11y-hc', 'a11y-gray', 'a11y-no-anim');
-        
-        // Aplicar estado
-        if (a11yState.textModifier === 'lg') htmlEl.classList.add('a11y-text-lg');
-        if (a11yState.textModifier === 'sm') htmlEl.classList.add('a11y-text-sm');
-        if (a11yState.highContrast) htmlEl.classList.add('a11y-hc');
-        if (a11yState.grayscale) htmlEl.classList.add('a11y-gray');
-        if (a11yState.noAnimations) htmlEl.classList.add('a11y-no-anim');
+// Función para aplicar las clases basándose en el estado
+const applyA11yState = () => {
+    // Limpiar clases
+    htmlEl.classList.remove('a11y-text-lg', 'a11y-text-sm', 'a11y-hc', 'a11y-gray', 'a11y-no-anim');
 
-        // Guardar en cache del navegador
-        localStorage.setItem('inkmaster_a11y', JSON.stringify(a11yState));
-    };
+    // Aplicar estado
+    if (a11yState.textModifier === 'lg') htmlEl.classList.add('a11y-text-lg');
+    if (a11yState.textModifier === 'sm') htmlEl.classList.add('a11y-text-sm');
+    if (a11yState.highContrast) htmlEl.classList.add('a11y-hc');
+    if (a11yState.grayscale) htmlEl.classList.add('a11y-gray');
+    if (a11yState.noAnimations) htmlEl.classList.add('a11y-no-anim');
 
-    // Aplicar al cargar la página
-    applyA11yState();
+    // Guardar en cache del navegador
+    localStorage.setItem('inkmaster_a11y', JSON.stringify(a11yState));
+};
 
-    // Abrir/Cerrar menú
-    a11yToggle?.addEventListener('click', () => {
-        const isExpanded = a11yMenu.classList.contains('active');
-        a11yMenu.classList.toggle('active');
-        a11yMenu.setAttribute('aria-hidden', isExpanded);
-    });
+// Aplicar al cargar la página
+applyA11yState();
 
-    a11yClose?.addEventListener('click', () => {
-        a11yMenu.classList.remove('active');
-        a11yMenu.setAttribute('aria-hidden', 'true');
-    });
+// Abrir/Cerrar menú
+a11yToggle?.addEventListener('click', () => {
+    const isExpanded = a11yMenu.classList.contains('active');
+    a11yMenu.classList.toggle('active');
+    a11yMenu.setAttribute('aria-hidden', isExpanded);
+});
 
-    // Lógica de botones
-    a11yButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const action = e.currentTarget.getAttribute('data-action');
+a11yClose?.addEventListener('click', () => {
+    a11yMenu.classList.remove('active');
+    a11yMenu.setAttribute('aria-hidden', 'true');
+});
 
-            switch (action) {
-                case 'increase-text':
-                    a11yState.textModifier = a11yState.textModifier === 'lg' ? null : 'lg';
-                    break;
-                case 'decrease-text':
-                    a11yState.textModifier = a11yState.textModifier === 'sm' ? null : 'sm';
-                    break;
-                case 'high-contrast':
-                    a11yState.highContrast = !a11yState.highContrast;
-                    break;
-                case 'grayscale':
-                    a11yState.grayscale = !a11yState.grayscale;
-                    break;
-                case 'no-animations':
-                    a11yState.noAnimations = !a11yState.noAnimations;
-                    break;
-                case 'reset':
-                    a11yState = { textModifier: null, highContrast: false, grayscale: false, noAnimations: false };
-                    break;
-            }
-            applyA11yState();
-        });
-    });
+// Lógica de botones
+a11yButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const action = e.currentTarget.getAttribute('data-action');
 
-    // Cerrar al dar click fuera del widget
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('#a11y-widget') && a11yMenu?.classList.contains('active')) {
-            a11yMenu.classList.remove('active');
+        switch (action) {
+            case 'increase-text':
+                a11yState.textModifier = a11yState.textModifier === 'lg' ? null : 'lg';
+                break;
+            case 'decrease-text':
+                a11yState.textModifier = a11yState.textModifier === 'sm' ? null : 'sm';
+                break;
+            case 'high-contrast':
+                a11yState.highContrast = !a11yState.highContrast;
+                break;
+            case 'grayscale':
+                a11yState.grayscale = !a11yState.grayscale;
+                break;
+            case 'no-animations':
+                a11yState.noAnimations = !a11yState.noAnimations;
+                break;
+            case 'reset':
+                a11yState = { textModifier: null, highContrast: false, grayscale: false, noAnimations: false };
+                break;
         }
+        applyA11yState();
     });
+});
+
+// Cerrar al dar click fuera del widget
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('#a11y-widget') && a11yMenu?.classList.contains('active')) {
+        a11yMenu.classList.remove('active');
+    }
+});
